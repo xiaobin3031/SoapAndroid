@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">SoapAndroid</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="tasks">任务</string>
+
+
+    <string name="labelTitle">标题：</string>
+    <string name="labelDescription">描述：</string>
+    <string name="labelAssign">指派：</string>
+    <string name="labelType">类型：</string>
+
+    <string name="textNextPublish">下次上线</string>
+    <string name="textSave">保存</string>
+    <string name="textCancel">取消</string>
+    <string name="textClose">关闭</string>
+    <string name="textNew">新增</string>
+    <string name="textSaving">保存中</string>
+    <string name="textFetching">查询中</string>
+
+    <string name="hintTitle">请输入标题</string>
+    <string name="hintDescription">请输入描述</string>
+
+    <string name="columns">columns</string>
+    <string name="colTitle">title</string>
+    <string name="colTaskInfo">task_info</string>
+    <string name="colTaskType">task_type</string>
+    <string name="colUserId">user_id</string>
+    <string name="colCreateUser">create_user</string>
+    <string name="colCreateTime">create_time</string>
+    <string name="colUpdateUser">update_user</string>
+    <string name="colUpdateTime">update_time</string>
+    <string name="colTaskId">task_id</string>
+    <string name="colIsNext">is_next</string>
+
+    <string name="valSelfUUID">33f28298517249798c23e486c9926c95</string>
+    <string name="val1">1</string>
+    <string name="val0">0</string>
+    <string name="val00">00</string>
+
+    <!-- arrays -->
+    <string-array name="tasksStatus">
+        <item value="1">a</item>
+        <item value="2">b</item>
+        <item value="3">c</item>
+    </string-array>
+
+</resources>
