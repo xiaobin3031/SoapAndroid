@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.*;
 import com.xiaobin.soapandroid.R;
+import com.xiaobin.soapandroid.adapter.CodeSpinnerAdapter;
 import com.xiaobin.soapandroid.db.Db;
 import com.xiaobin.soapandroid.db.TasksDbHelper;
 import com.xiaobin.soapandroid.model.Code;
@@ -63,11 +64,10 @@ public class TasksAddActivity extends AppCompatActivity {
         Code code = new Code();
         List<Code> list = code.putCodes(new String[]{"00","05","10","20","90"},new String[]{"bug","误报","代码","优化","重复提交"});
 
-        ArrayAdapter<Code> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,list);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        CodeSpinnerAdapter arrayAdapter = new CodeSpinnerAdapter(this,android.R.layout.simple_spinner_item,list);
         taskTypeSpinner.setAdapter(arrayAdapter);
 
-        Button tasksSaveButton = (Button) findViewById(R.id.tasksSaveButton);
+        ImageButton tasksSaveButton = (ImageButton) findViewById(R.id.tasksSaveButton);
         tasksSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,13 +75,14 @@ public class TasksAddActivity extends AppCompatActivity {
             }
         });
 
-        Button tasksCancelButton = (Button) findViewById(R.id.tasksCancelButton);
-        tasksCancelButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton backButton = (ImageButton) findViewById(R.id.go_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
     }
 
     @SuppressWarnings("unchecked")
@@ -103,9 +104,7 @@ public class TasksAddActivity extends AppCompatActivity {
                 }
                 CharSequence description = ((TextView)findViewById(R.id.tasksDescription)).getText();
                 if(description == null || description.toString().trim().equals("")){
-                    dialog.dismiss();
-                    Toast.makeText(TasksAddActivity.this, R.string.hintDescription, Toast.LENGTH_SHORT).show();
-                    return;
+                    description = title;
                 }
 
                 CheckBox isNext = (CheckBox) findViewById(R.id.tasksNextPublish);

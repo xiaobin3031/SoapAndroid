@@ -10,7 +10,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import com.xiaobin.soapandroid.R;
 import com.xiaobin.soapandroid.db.Db;
 import com.xiaobin.soapandroid.db.TasksDbHelper;
@@ -29,7 +32,16 @@ public class TasksActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(),TasksDetailActivity.class);
+            Bundle bundle = new Bundle();
+            Map<String,Object> map = data.get(position);
+            for(String key : map.keySet()){
+                bundle.putString(key,(String) map.get(key));
+            }
+            bundle.putInt(getString(R.string.colPosition),position);
+            intent.putExtras(bundle);
+            startActivityForResult(intent,RESULT_FIRST_USER << 1);
         }
     };
     private Handler.Callback handlerCallback = new Handler.Callback() {
@@ -116,6 +128,7 @@ public class TasksActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch(requestCode){
+            //@Date:2017/10/23 - @Author:XWB - @Msg: 新增
             case RESULT_FIRST_USER:
                 if(resultCode == RESULT_OK){
                     String[] columns = data.getStringArrayExtra(getString(R.string.columns));
@@ -124,6 +137,26 @@ public class TasksActivity extends AppCompatActivity {
                         map.put(column,data.getStringExtra(column));
                     }
                     this.data.add(0,map);
+                    simpleAdapter.notifyDataSetChanged();
+                }
+                break;
+            case RESULT_FIRST_USER << 1:
+                if(resultCode == RESULT_OK){
+                    Bundle bundle = data.getExtras();
+                    if(bundle == null){
+                        return;
+                    }
+                    int position = bundle.getInt(getString(R.string.colPosition));
+                    if(position == 0){
+                        return;
+                    }
+                    Map<String,Object> map = this.data.get(position);
+                    for(String key : bundle.keySet()){
+                        if(!map.containsKey(key)){
+                            continue;
+                        }
+                        map.put(key,bundle.getString(key));
+                    }
                     simpleAdapter.notifyDataSetChanged();
                 }
                 break;

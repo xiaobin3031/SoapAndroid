@@ -21,6 +21,7 @@
     <string name="textNew">新增</string>
     <string name="textSaving">保存中</string>
     <string name="textFetching">查询中</string>
+    <string name="textBack">返回</string>
 
     <string name="hintTitle">请输入标题</string>
     <string name="hintDescription">请输入描述</string>
@@ -36,6 +37,7 @@
     <string name="colUpdateTime">update_time</string>
     <string name="colTaskId">task_id</string>
     <string name="colIsNext">is_next</string>
+    <string name="colPosition">position</string>
 
     <string name="valSelfUUID">33f28298517249798c23e486c9926c95</string>
     <string name="val1">1</string>

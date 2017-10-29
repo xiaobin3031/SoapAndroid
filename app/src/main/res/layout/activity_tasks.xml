@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,30 +9,29 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <android.support.design.widget.AppBarLayout
-                android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:id="@+id/tasksAppBar"
-                android:theme="@style/AppTheme.AppBarOverlay">
-
-            <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:popupTheme="@style/AppTheme.PopupOverlay">
-                <ImageButton
-                        android:contentDescription="@string/textNew"
-                        android:src="@android:drawable/ic_input_add"
-                        android:id="@+id/tasksAddButton"
-                        android:background="#00000000"
-                        android:layout_width="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_height="match_parent"/>
-            </android.support.v7.widget.Toolbar>
-
-        </android.support.design.widget.AppBarLayout>
+                android:background="@color/colorCommonHeader"
+                android:layout_height="@dimen/common_header_height">
+        <ImageButton
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:background="#00000000"
+                android:layout_marginStart="10dp"
+                android:id="@+id/go_back"
+                android:contentDescription="@string/textBack"/>
+            <ImageButton
+                    android:contentDescription="@string/textNew"
+                    android:src="@android:drawable/ic_input_add"
+                    android:id="@+id/tasksAddButton"
+                    android:background="#00000000"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"/>
+        </RelativeLayout>
 
         <RelativeLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"

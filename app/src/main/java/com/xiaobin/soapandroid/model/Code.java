@@ -35,6 +35,7 @@ public class Code {
             code = new Code();
             code.setCode(codes[i]);
             code.setName(names[i]);
+            list.add(code);
         }
         return list;
     }

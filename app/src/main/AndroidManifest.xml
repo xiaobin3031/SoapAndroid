@@ -22,9 +22,13 @@
                 android:theme="@style/AppTheme.NoActionBar"
                 android:name=".tasks.TasksActivity">
         </activity>
-        <activity android:name=".tasks.TasksDetailActivity">
+        <activity
+                android:theme="@style/AppTheme.NoActionBar"
+                android:name=".tasks.TasksDetailActivity">
         </activity>
-        <activity android:name=".tasks.TasksAddActivity">
+        <activity
+                android:theme="@style/AppTheme.NoActionBar"
+                android:name=".tasks.TasksAddActivity">
         </activity>
     </application>
 

@@ -1,96 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_tasks_add"
+<android.support.design.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context="com.xiaobin.soapandroid.MainActivity">
+<LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="com.xiaobin.soapandroid.tasks.TasksAddActivity">
-
-    <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/labelTitle"
-            android:id="@+id/tasksLabelTitle"
-            android:labelFor="@+id/tasksTitle"
-    />
-    <EditText
+        android:layout_height="match_parent">
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tasksTitle"
-            android:layout_toEndOf="@+id/tasksLabelTitle"
-            android:layout_alignTop="@+id/tasksLabelTitle"
-            android:hint="@string/hintTitle"
-            android:inputType="text"/>
-    <TextView
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tasksTitle"
-            android:layout_marginTop="20dp"
-            android:text="@string/labelDescription"
-            android:labelFor="@+id/tasksDescription"
-            android:id="@+id/tasksLabelDescription"
-            android:layout_width="wrap_content"/>
-    <EditText
-            android:layout_height="wrap_content"
-            android:id="@+id/tasksDescription"
-            android:inputType="textMultiLine"
-            android:hint="@string/hintDescription"
-            android:layout_toEndOf="@+id/tasksLabelDescription"
-            android:layout_alignTop="@+id/tasksLabelDescription"
-            android:lines="3"
-            android:layout_width="match_parent"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/tasksLabelAssign"
-            android:text="@string/labelAssign"
-            android:layout_below="@+id/tasksDescription"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"/>
-    <Spinner
+            android:background="@color/colorCommonHeader"
+            android:layout_height="@dimen/common_header_height">
+        <ImageButton
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:background="#00000000"
+                android:layout_marginStart="10dp"
+                android:id="@+id/go_back"
+                android:contentDescription="@string/textBack"/>
+        <ImageButton
+                android:contentDescription="@string/textNew"
+                android:src="@android:drawable/ic_menu_save"
+                android:id="@+id/tasksSaveButton"
+                android:background="#00000000"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_height="match_parent"/>
+    </RelativeLayout>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_tasks_add"
             android:layout_width="match_parent"
-            android:id="@+id/tasksAssignSpinner"
-            android:layout_toEndOf="@+id/tasksLabelAssign"
-            android:layout_alignTop="@+id/tasksLabelAssign"
-            android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/labelType"
-        android:layout_below="@+id/tasksAssignSpinner"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tasksLabelType"
-        android:layout_height="wrap_content"/>
-    <Spinner
-        android:layout_width="match_parent"
-        android:id="@+id/tasksType"
-        android:layout_toEndOf="@+id/tasksLabelType"
-        android:layout_alignTop="@+id/tasksLabelType"
-        android:layout_height="wrap_content"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:text="@string/textNextPublish"
-        android:layout_below="@+id/tasksType"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tasksNextPublish"
-        android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            tools:context="com.xiaobin.soapandroid.tasks.TasksAddActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:text="@string/textSave"
-        android:layout_below="@+id/tasksNextPublish"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="50dp"
-        android:id="@+id/tasksSaveButton"
-        android:layout_height="wrap_content"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:text="@string/textCancel"
-            android:layout_alignBottom="@+id/tasksSaveButton"
-            android:layout_toEndOf="@+id/tasksSaveButton"
-            android:layout_marginStart="50dp"
-            android:id="@+id/tasksCancelButton"
-            android:layout_height="wrap_content"/>
-</RelativeLayout>
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/labelTitle"
+                android:id="@+id/tasksLabelTitle"
+                android:labelFor="@+id/tasksTitle"
+        />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tasksTitle"
+                android:layout_toEndOf="@+id/tasksLabelTitle"
+                android:layout_alignTop="@+id/tasksLabelTitle"
+                android:hint="@string/hintTitle"
+                android:inputType="text"/>
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tasksTitle"
+                android:layout_marginTop="20dp"
+                android:text="@string/labelDescription"
+                android:labelFor="@+id/tasksDescription"
+                android:id="@+id/tasksLabelDescription"
+                android:layout_width="wrap_content"/>
+        <EditText
+                android:layout_height="wrap_content"
+                android:id="@+id/tasksDescription"
+                android:inputType="textMultiLine"
+                android:hint="@string/hintDescription"
+                android:layout_toEndOf="@+id/tasksLabelDescription"
+                android:layout_alignTop="@+id/tasksLabelDescription"
+                android:lines="3"
+                android:layout_width="match_parent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tasksLabelAssign"
+                android:text="@string/labelAssign"
+                android:layout_below="@+id/tasksDescription"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"/>
+        <Spinner
+                android:layout_width="match_parent"
+                android:id="@+id/tasksAssignSpinner"
+                android:layout_toEndOf="@+id/tasksLabelAssign"
+                android:layout_alignTop="@+id/tasksLabelAssign"
+                android:layout_height="wrap_content" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/labelType"
+                android:layout_below="@+id/tasksAssignSpinner"
+                android:layout_marginTop="20dp"
+                android:id="@+id/tasksLabelType"
+                android:layout_height="wrap_content"/>
+        <Spinner
+                android:layout_width="match_parent"
+                android:id="@+id/tasksType"
+                android:layout_toEndOf="@+id/tasksLabelType"
+                android:layout_alignTop="@+id/tasksLabelType"
+                android:layout_height="wrap_content"/>
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:text="@string/textNextPublish"
+                android:layout_below="@+id/tasksType"
+                android:layout_marginTop="20dp"
+                android:id="@+id/tasksNextPublish"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
