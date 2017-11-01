@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.xiaobin.soapandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -19,16 +20,20 @@
             </intent-filter>
         </activity>
         <activity
-                android:theme="@style/AppTheme.NoActionBar"
-                android:name=".tasks.TasksActivity">
+                android:name=".tasks.TasksActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".tasks.TasksDetailActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".tasks.TasksAddActivity"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:theme="@style/AppTheme.NoActionBar"
-                android:name=".tasks.TasksDetailActivity">
-        </activity>
-        <activity
-                android:theme="@style/AppTheme.NoActionBar"
-                android:name=".tasks.TasksAddActivity">
+                android:name=".sync.SyncActivity">
         </activity>
     </application>
 

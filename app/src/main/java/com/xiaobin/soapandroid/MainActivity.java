@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import com.xiaobin.soapandroid.sync.SyncActivity;
 import com.xiaobin.soapandroid.tasks.TasksActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -113,6 +114,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if(id == R.id.nav_sync){
+            Intent intent = new Intent(this, SyncActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
